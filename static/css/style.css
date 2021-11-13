@@ -309,7 +309,7 @@ footer > span {
         display: none;
     }
     .post-date {
-        min-width: 100px;
+        min-width: 85px;
         display: inline;
     }
 }

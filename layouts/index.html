@@ -1,0 +1,12 @@
+{{- define "main" -}}
+    {{- range $.Site.RegularPages.GroupByDate "2006" -}}
+    <h3 class="post-year">{{- .Key -}}</h3>
+    {{- range .Pages.ByDate.Reverse -}}
+        <div class="post-item">
+            <a class="post-title" href="{{- .RelPermalink -}}">{{- .Title -}}</a>
+            <span> ······························································································································</span>
+            <div class="post-date">{{- .Date.Format "2006-01-02" -}}</div>
+        </div>
+    {{- end -}}
+    {{- end -}}
+{{- end -}}

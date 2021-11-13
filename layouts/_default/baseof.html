@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+    <div class="paper">
+        {{- partial "header.html" . -}}
+            <div class="paper-inner">
+                {{- block "main" . }}{{- end }}
+            </div>
+        {{- partial "footer.html" . -}}
+    </div>
+    </body>
+    <!-- medium-zoom.js -->
+    <script src="/js/medium-zoom.min.js"></script>
+    <script src="/js/script.js"></script>
+</html>

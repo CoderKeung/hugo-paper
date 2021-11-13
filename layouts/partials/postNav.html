@@ -1,0 +1,29 @@
+<ul class="post-nav">
+    {{ with .Site.RegularPages.Prev . }}
+        <li class="previous">
+            <a href="{{ .RelPermalink }}">
+                {{ $title := .Title }}
+                {{ $titleWordCount := .Title | strings.RuneCount }}
+                {{ if gt $titleWordCount 13 }}
+                    {{ $title = substr $title 0 13 }}
+                    {{ $title = printf "%s..." $title }}
+                {{ end }}
+                <strong>← {{ $title }}</strong>
+            </a>
+        </li>
+    {{ end }}
+  {{ with .Site.RegularPages.Next . }}
+    <li class="next">
+      <a href="{{ .RelPermalink }}">
+        {{ $title := .Title }}
+        {{ $titleWordCount := .Title | strings.RuneCount }}
+        {{ if gt $titleWordCount 13 }}
+          {{ $title = substr $title 0 13 }}
+          {{ $title = printf "%s..." $title }}
+        {{ end }}
+        <strong>{{ $title }} →</strong>
+      </a>
+    </li>
+  {{ end }}
+</ul>
+<div class="blank"></div>

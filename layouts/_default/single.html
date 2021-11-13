@@ -1,0 +1,17 @@
+{{- define "main" -}}
+    <h1 class="content-title">{{ .Title }}</h1>
+        <div class="content{{- with or .Site.Params.Indent .Params.indent -}}{{ printf " content-indent"}}{{- end -}}">
+            {{ if .Params.initial }}
+                {{ $content := .Content }}
+                {{ $firstParagraph := index (findRE "<p.*?>(.|\n)*?</p>" $content 1) 0 }}
+                {{ $firstWord := substr $firstParagraph 3 1 }}
+                {{ $firstTagP := substr $firstParagraph 0 4 }}
+                {{ $newFirstWord := printf "<p style=\"text-indent: 0\"><span class=\"first-word\">%s</span>" $firstWord }}
+                {{ $content = replace $content $firstTagP $newFirstWord 1}}
+                {{ $content | safeHTML }}
+            {{ else }}
+                {{ .Content }}
+            {{ end }}
+        </div>
+        {{- partial "postNav" . -}}
+{{- end -}}

@@ -2,7 +2,7 @@
     <h1 class="content-title">{{ .Title }}</h1>
         <div class="content{{- with or .Site.Params.Indent .Params.indent -}}{{ printf " content-indent"}}{{- end -}}">
             {{ if .Params.initial }}
-                {{ $content := .Content }}
+                {{- $content := partial "img" . -}}
                 {{ $firstParagraph := index (findRE "<p.*?>(.|\n)*?</p>" $content 1) 0 }}
                 {{ $firstWord := substr $firstParagraph 3 1 }}
                 {{ $firstTagP := substr $firstParagraph 0 4 }}

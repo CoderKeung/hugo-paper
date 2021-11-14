@@ -7,9 +7,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 :root {
+    --theme-name:"light";
     --color-primary: #252A34;
     --color-sub-primary: #EAEAEA;
-    --color-sub-primary-height: #313131;
+    --color-sub-primary-height: #354B5E;
     --color-white: #FFFFFF;
 }
 
@@ -277,6 +278,32 @@ header > div > a:hover {
     bottom: 10px;
 }
 
+.caption {
+    display: block;
+    text-align: center;
+    margin: -1em 0 0;
+    font-size: 90%;
+}
+
+.content-indent .caption {
+    text-indent: 0;
+    margin: 0 0 1em;
+}
+
+.home-direction {
+    position: absolute;
+    right: 60px;
+    top: 40%;
+    font-size: 24px;
+}
+.home-direction-sub {
+    position: absolute;
+    font-size: 12px;
+    right: 60px;
+    top: 46%;
+    color: var(--color-sub-primary-height);
+}
+
 footer {
     height: 50px;
     position: absolute;
@@ -288,8 +315,8 @@ footer > span {
     font-size: 10px;
     padding-top: 15px;
     margin-left: 48px;
-    border-top: 1px solid var(--color-sub-primary);
-    color: var(--color-sub-primary);
+    border-top: 1px solid var(--color-sub-primary-height);
+    color: var(--color-sub-primary-height);
 }
 
 @media screen and (max-width: 600px) {

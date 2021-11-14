@@ -1,5 +1,20 @@
 <header>
-    <div class="header-home">
-        <a href="{{ .Site.BaseURL }}">HOME</a>
+        {{- if and .IsHome .Site.Params.postURL -}}
+            <div class="header-home">
+                <a href="{{- .Site.Params.postURL -}}">{{- .Site.Params.postURLName -}}</a>
+            </div>
+        {{- else if .IsPage -}}
+            <div class="header-home">
+                <a href="{{- .Site.Params.postURL -}}">{{- .Site.Params.postURLName -}}</a>
+            </div>
+        {{- else -}}
+            <div class="header-home">
+                <a href="{{ $.Site.BaseURL }}">主页</a>
+            </div>
+        {{- end -}}
+    <div class="toggle-box">
+        <input id="theme-switch" name="theme-toggle" type="checkbox" class="theme-toggle">
+        <label for="theme-switch" class="theme-dark"></label>
+        <label for="theme-switch" class="theme-light"></label>
     </div>
 </header>

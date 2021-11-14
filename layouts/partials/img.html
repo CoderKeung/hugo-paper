@@ -1,0 +1,11 @@
+{{/* Clone From https://github.com/reuixiy/hugo-theme-meme/blob/ed7e68ba0f5b4b6dbe3a246810bef682735d0900/layouts/partials/utils/content.html#L106 */}}
+{{- $Content := .Content -}}
+<!-- Image & Video Caption -->
+{{- if .Site.Params.enableCaption -}}
+    {{- $captionPrefix := .Site.Params.captionPrefix -}}
+    {{- $regexPatternCaption := `(<(img|video).+) title="([^"]+)"( controls)?( />|>)(</video>)?` -}}
+    {{- $regexReplacementCaption := (printf `$1$4$5$6<span class="caption">%s$3</span>` $captionPrefix) -}}
+    {{- $Content = $Content | replaceRE $regexPatternCaption $regexReplacementCaption -}}
+{{- end -}}
+
+{{- $Content | safeHTML -}}

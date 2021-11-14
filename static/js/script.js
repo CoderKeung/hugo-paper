@@ -8,3 +8,4 @@ images.forEach(img => {
         template: null /* The template element to display on zoom */
     });
 });
+

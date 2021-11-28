@@ -1,5 +1,14 @@
 {{- define "main" -}}
 <div class="home-direction">{{- .Site.Params.homeDirection -}}</div>
 <div class="home-direction-sub">{{- .Site.Params.homeDirectionSub -}}</div>
-
+{{- with .Site.Params.homeTopPicture -}}
+<div class="home-top-picture">
+  <img src="{{- . -}}" alt="homeTopPicture">
+</div>
+{{- end -}}
+{{- with .Site.Params.homePicture -}}
+<div class="home-picture">
+  <img src="{{- . -}}" alt="homePicture">
+</div>
+{{- end -}}
 {{- end -}}

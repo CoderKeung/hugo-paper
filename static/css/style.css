@@ -378,6 +378,14 @@ footer > span {
     color: var(--color-sub-primary-height);
 }
 
+.poem {
+  margin-bottom: 100px;
+}
+.poem p {
+  text-align: center;
+  line-height: 1.5;
+}
+
 @media screen and (max-width: 600px) {
     .paper-inner {
         padding: 30px 30px 80px 30px;

@@ -3,7 +3,7 @@
     {{- if or .Site.Params.Toc .Params.Toc -}}
         {{ .TableOfContents }}
     {{- end -}}
-        <div class="content{{- with or .Site.Params.Indent .Params.indent -}}{{ printf " content-indent"}}{{- end -}}">
+        <div class="content{{- with or .Site.Params.Indent .Params.indent -}}{{ printf " content-indent"}}{{- end -}}{{- if .Params.poem -}}{{- printf " poem" -}}{{- end -}}">
             {{ if .Params.initial }}
                 {{- $content := partial "img" . -}}
                 {{ $firstParagraph := index (findRE "<p.*?>(.|\n)*?</p>" $content 1) 0 }}
